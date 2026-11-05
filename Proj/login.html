@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ตรวจสอบสิทธิ์เข้าใช้งาน</title>
+    <script language="JavaScript">
+        function Checkform() {
+            if (document.login.username.value == "") {
+                alert("กรุณากรอกข้อมูล ชื่อผู้ใช้งาน");
+                document.login.username.focus();
+                return false;
+            }
+            if (document.login.password.value == "") {
+                alert("กรุณากรอกข้อมูล รหัสผ่าน");
+                document.login.password.focus();
+                return false;
+            }
+            document.login.submit();
+        }
+    </script>
+</head>
+<body>
+
+    <h2>ตรวจสอบสิทธิ์เข้าใช้งาน</h2>
+
+    <form action="checklogin.php" name="login" onSubmit="JavaScript:return Checkform();" method="post">
+        <label for="username">ชื่อผู้ใช้งาน : </label>
+        <input type="text" size="20" name="user" id="username" maxlength="20">
+        <br><br>
+
+        <label for="password">รหัสผ่าน : </label>
+        <input type="password" size="20" name="pass" id="password" maxlength="20">
+        <br><br>
+
+        <input type="submit" value="ตกลง">
+        <input type="reset" value="กรอกใหม่">
+    </form>
+
+</body>
+</html>
