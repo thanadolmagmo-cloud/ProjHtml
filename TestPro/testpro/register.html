@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>สมัครสมาชิก</title>
+    <script language="JavaScript">
+        function Checkform() {
+            if (document.register.name.value == "") {
+                alert("กรุณากรอกข้อมูลชื่อ-นามสกุลผู้ใช้งาน");
+                document.register.name.focus();
+                return false;
+            }
+            if (document.register.username.value == "") {
+                alert("กรุณากรอกข้อมูลชื่อผู้ใช้งาน");
+                document.register.username.focus();
+                return false;
+            }
+            if (document.register.password.value == "") {
+                alert("กรุณากรอกข้อมูลรหัสผ่าน");
+                document.register.password.focus();
+                return false;
+            }
+            if (document.register.password2.value == "") {
+                alert("กรุณากรอกข้อมูลยืนยันรหัสผ่าน");
+                document.register.password2.focus();
+                return false;
+            }
+            if (document.register.password.value != document.register.password2.value) {
+                alert("รหัสผ่านไม่ตรงกัน กรุณากรอกใหม่");
+                document.register.password2.focus();
+                return false;
+            }
+            document.register.submit();
+        }
+    </script>
+</head>
+<body>
+    <h2>กรุณากรอกข้อมูลสมัครสมาชิก</h2>
+    <form action="addmember.php" name="register" onSubmit="JavaScript:return Checkform();" method="post">
+        ชื่อ-นามสกุลผู้ใช้งาน : <input type="text" size="20" name="name" id="name" maxlength="50"><br>
+        ชื่อผู้ใช้งาน : <input type="text" size="20" name="user" id="username" maxlength="20"><br>
+        รหัสผ่าน : <input type="password" size="20" name="pass" id="password" maxlength="20"><br>
+        ยืนยันรหัสผ่าน : <input type="password" size="20" name="pass2" id="password2" maxlength="20"><br><br>
+        <input type="submit" value="ตกลง">
+        <input type="reset" value="กรอกใหม่">
+    </form>
+</body>
+</html>
