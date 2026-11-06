@@ -46,7 +46,7 @@
                             จัดการข้อมูลสินค้า <br>
                         <?php } elseif ($usertype == "member") { ?>
                             [Menu Member]<br>
-                            <a href="viewinfo.html">ข้อมูลส่วนตัว</a><br>
+                            <a href="viewinfo.php">ข้อมูลส่วนตัว</a><br>
                             <a href="repassword.php">เปลี่ยนรหัสผ่าน</a><br>
                         <?php } ?>
                         </td>
