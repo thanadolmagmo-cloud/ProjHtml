@@ -1,0 +1,120 @@
+/* ธีมทองไทย: พญานาค + ใบโพธิ์ทอง  (วางไฟล์นี้และ bg.jpg ไว้โฟลเดอร์เดียวกับ index.php) */
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;700&family=Prompt:wght@500;600&display=swap');
+
+:root {
+    --gold:       #c9a227;
+    --gold-light: #e8cf7a;
+    --gold-pale:  #fbf3d5;
+    --gold-dark:  #8a6d12;
+    --brown:      #4a3a0c;
+    --cream:      #fffdf5;
+}
+
+/* ---------- พื้นหลังทั้งเว็บ ---------- */
+html { min-height: 100%; }
+body, body.bg-light {
+    font-family: 'Sarabun', sans-serif;
+    color: var(--brown);
+    background-color: var(--cream) !important;
+    background-image: url('bg.jpg') !important;
+    background-repeat: no-repeat !important;
+    background-position: center bottom !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+}
+/* ฟิล์มสีครีมบางๆ ให้ตัวหนังสืออ่านง่าย (ลดค่า .55 ถ้าอยากให้ลายเด่นขึ้น) */
+body::before {
+    content: "";
+    position: fixed; inset: 0;
+    background: linear-gradient(180deg, rgba(255,253,245,.35) 0%, rgba(255,253,245,.55) 100%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand, .display-6 {
+    font-family: 'Prompt', 'Sarabun', sans-serif;
+}
+
+/* ---------- สีหลัก: แทนที่เขียวด้วยทอง ---------- */
+.text-success          { color: var(--gold-dark) !important; }
+.bg-success            { background: linear-gradient(135deg, var(--gold-dark), var(--gold) 55%, var(--gold-light)) !important; }
+.text-white-50         { color: rgba(255,255,255,.8) !important; }
+
+/* แถบเมนู */
+.navbar-gold {
+    background: linear-gradient(135deg, #7a5f0e, var(--gold) 60%, #dcbf5f) !important;
+    border-bottom: 3px solid var(--gold-light);
+    box-shadow: 0 3px 12px rgba(138,109,18,.3);
+}
+.navbar-gold .nav-link { color: #fff8dc; }
+.navbar-gold .nav-link:hover,
+.navbar-gold .nav-link.active { color: #fff; text-shadow: 0 0 6px rgba(255,255,255,.7); }
+.navbar-gold .badge.bg-light { color: var(--gold-dark) !important; }
+.dropdown-menu { border: 1px solid var(--gold-light); background: var(--cream); }
+.dropdown-item:hover { background: var(--gold-pale); color: var(--gold-dark); }
+
+/* ---------- การ์ด / กล่องขาว ---------- */
+.card, .bg-white {
+    background-color: rgba(255,253,245,.92) !important;
+    border: 1px solid var(--gold-light) !important;
+    border-radius: 14px !important;
+    backdrop-filter: blur(3px);
+}
+.card.shadow-sm, .shadow-sm, .shadow { box-shadow: 0 4px 16px rgba(138,109,18,.18) !important; }
+.card-header { border-radius: 13px 13px 0 0 !important; border-bottom: 1px solid var(--gold-light); }
+.card-header.bg-dark { background: linear-gradient(135deg, #3b2e08, #6b5410) !important; color: #fff3c4 !important; }
+.card-header.bg-warning { background: var(--gold-pale) !important; color: var(--gold-dark); }
+.card-img-top { border-radius: 13px 13px 0 0; }
+.card:hover { transition: transform .2s; }
+.row > div > .card.h-100:hover { transform: translateY(-3px); }
+
+/* ---------- ปุ่ม ---------- */
+.btn-success {
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+    border-color: var(--gold-dark); color: #fff;
+}
+.btn-success:hover, .btn-success:focus {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-color: var(--gold); color: var(--brown);
+}
+.btn-outline-success { color: var(--gold-dark); border-color: var(--gold); }
+.btn-outline-success:hover { background: var(--gold); border-color: var(--gold); color: #fff; }
+.btn-warning { background: var(--gold-light); border-color: var(--gold); color: var(--brown); }
+.btn-warning:hover { background: var(--gold); border-color: var(--gold-dark); color: #fff; }
+.btn-primary { background: var(--gold-dark); border-color: var(--gold-dark); }
+.btn-primary:hover { background: var(--gold); border-color: var(--gold); color: var(--brown); }
+
+/* ---------- ฟอร์ม ---------- */
+.form-control, .form-select { border-color: var(--gold-light); background-color: #fffef9; }
+.form-control:focus, .form-select:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 .2rem rgba(201,162,39,.25);
+}
+.form-check-input:checked { background-color: var(--gold); border-color: var(--gold); }
+
+/* ---------- ป้าย / ตาราง / ลิงก์ ---------- */
+.badge.bg-success { background: var(--gold) !important; color: #fff; }
+.badge.bg-info    { background: var(--gold-pale) !important; color: var(--gold-dark) !important; border: 1px solid var(--gold-light); }
+.badge.bg-secondary { background: #a68a2c !important; }
+.bg-success-subtle { background: var(--gold-pale) !important; }
+.text-success-emphasis { color: var(--gold-dark) !important; }
+
+.table { --bs-table-bg: rgba(255,253,245,.92); }
+.table-dark { --bs-table-bg: #5a460d; --bs-table-color: #fff3c4; border-color: #7a5f0e; }
+.table-bordered > :not(caption) > * > * { border-color: var(--gold-light); }
+
+.list-group-item { background: transparent; border-color: var(--gold-light); }
+a { color: var(--gold-dark); }
+a:hover { color: var(--gold); }
+.alert-info    { background: var(--gold-pale); border-color: var(--gold-light); color: var(--brown); }
+.alert-info .alert-link { color: var(--gold-dark); }
+.alert-success { background: #f3f7e0; border-color: #d4dd9a; color: #4d5a14; }
+
+/* ขีดทองใต้หัวข้อหน้า */
+h2.text-success, h2.text-danger { display: inline-block; padding-bottom: .25rem; border-bottom: 3px solid var(--gold-light); }
+h2.text-danger { color: var(--gold-dark) !important; }
+
+/* มือถือ: ปิด fixed เพื่อไม่ให้ภาพกระตุก */
+@media (max-width: 768px) {
+    body, body.bg-light { background-attachment: scroll !important; background-size: auto 100% !important; }
+}
